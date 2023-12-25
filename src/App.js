@@ -12,64 +12,32 @@ export default function App() {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
-  // const [length, setLength] = useState('5');
-  // const [spec_char, setSpec_char] = useState(false);
-  // const [alphabets, setalphabets] = useState(false);
-  //  const [val, setVal] = useState('');
 
-  // const bb = useRef();
 
   const handleChange = (e) => {
     dispatch({ type: 'length', value: e.target.value });
-    // const { name, value } = e.target;
-    // setLength(value);
+   
   };
 
   const handleChangecheck = (e, name) => {
     dispatch({ type: 'spec_char', value: e.target.checked });
-
-    // if (name == 'spec_char') {
-    //   dispatch({ type: 'spec_char', value: e.target.checked });
-    // }
-    // if (name == 'alphabets') {
-    //   dispatch({ type: 'alphabets', value: e.target.checked });
-    // }
-    // if (name == 'spr')
-    //   // setSpec_char(e.target.checked);
-    //   setSpec_char((prev) => !prev);
   };
 
   const handleChangecheck1 = (e) => {
     dispatch({ type: 'alphabets', value: e.target.checked });
-    //setalphabets(e.target.checked);
   };
 
   const handleGenerate = () => {
     dispatch({ type: 'gen_password' });
 
-    // let pass = '';
-    // let str = '0123456789';
-    // if (spec_char) str += '[*(#$!@%^&)]';
-    // if (alphabets)
-    //   str += ' ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq rstuvwxyz';
-
-    // for (let i = 0; i < length; i++) {
-    //   let char = Math.floor(Math.random() * (str.length - 1) + 1);
-    //   console.log(char);
-    //   pass += str.charAt(char);
-    // }
-    // setVal(pass);
+    
   };
 
   const copyToClipboard = () => {
     window.navigator.clipboard.writeText(state.val);
-    // let cc = bb.current.select();
-    // console.log(cc, 'dcc');
+  
   };
 
-  // console.log('xs');
-
-  // console.log('nn', bb);
 
   return (
     <div className="bg-green-300 flex flex-col justify-evenly items-center p-6">
